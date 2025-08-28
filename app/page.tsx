@@ -409,8 +409,7 @@ export default function PortfolioPage() {
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-4xl animate-fadeIn px-6"
               style={{ animationDelay: "0.3s" }}
             >
-              A passionate developer creating modern, responsive, and performant web applications. Welcome to my digital
-              playground.
+              I'm Daniel Y. Elbaz, a developer building modern, useful, and cutting-edge software. Currently, I'm particularly passionate about artificial intelligence and am currently building multiple AI-powered applications.
             </p>
             <div
               className="flex flex-col sm:flex-row justify-center gap-4 animate-fadeIn"
