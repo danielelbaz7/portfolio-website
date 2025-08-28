@@ -89,6 +89,7 @@ export default function PortfolioPage() {
       image: "/placeholder.svg?height=225&width=400",
       liveUrl: "#",
       githubUrl: "https://github.com/danielelbaz7/chess-engine",
+      comingSoon: true,
     },
     {
       title: "Stock Trading Algorithm Visualizer",
@@ -501,13 +502,13 @@ export default function PortfolioPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="flex flex-col sm:flex-row justify-between gap-3">
-                      {project.inDevelopment || project.isPortfolio ? (
+                      {project.inDevelopment ? (
                         <Button
                           variant="outline"
                           className="border-purple-400/20 bg-purple-400/5 text-gray-400 cursor-not-allowed flex-1 sm:flex-none bg-transparent opacity-70"
                           disabled
                         >
-                          <Github className="w-4 h-4 mr-2" /> {project.inDevelopment ? "Private" : "Coming Soon"}
+                          <Github className="w-4 h-4 mr-2" /> Private
                         </Button>
                       ) : (
                         <Button
