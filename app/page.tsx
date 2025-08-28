@@ -113,15 +113,16 @@ export default function PortfolioPage() {
       githubUrl: "https://github.com/danielelbaz7/carbon-emissions-calculator",
     },
     {
-      title: "Minesweeper Recreation",
+      title: "Minesweeper",
       description:
         "A C++ recreation of the classic game, Minesweeper, featuring the original graphics used in the 1989 game. On top of all original features, it offers board importing as well as random board generation and a debug mode.",
       expandedDescription:
-        "This app is a recreation of the original Minesweeper, offering the same original experience and graphics with some additional features. Pre-made test boards are offered and they, alongside other custom boards, are importable into the game. A debug mode is also offered, allowing users get additional insights into the game. The program is written in C++ and uses SFML for the game's visuals. Overall, the program is just a slightly modernized recreation of the original game.",
+        "This app is a recreation of the original Minesweeper, offering the same original experience and graphics with some additional features. Pre-made test boards are offered and they, alongside other custom boards, are importable into the game. A debug mode is also offered, allowing users get additional insights into the game. The program is written in C++ and uses SFML for the game's visuals. The program is just a modernized recreation of the original game.",
       tags: ["C++", "SFML"],
       image: "/placeholder.svg?height=225&width=400",
       liveUrl: "#",
       githubUrl: "https://github.com/danielelbaz7/minesweeper-cpp",
+      comingSoon: true,
     },
     {
       title: "Personal Portfolio Website",
@@ -133,6 +134,7 @@ export default function PortfolioPage() {
       image: "/placeholder.svg?height=225&width=400",
       liveUrl: "#",
       githubUrl: "https://github.com/danielelbaz7/portfolio-website",
+      isPortfolio: true,
     },
   ]
 
@@ -441,7 +443,7 @@ export default function PortfolioPage() {
                 return (
                   <Card
                     key={index}
-                    className="bg-card/50 backdrop-blur-sm border-purple-400/15 hover:border-purple-400/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 relative group animate-fadeIn overflow-visible"
+                    className="bg-card/50 backdrop-blur-sm border-purple-400/15 hover:border-purple-400/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 relative group animate-fadeIn overflow-visible flex flex-col h-full"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {project.inDevelopment && (
@@ -486,18 +488,8 @@ export default function PortfolioPage() {
                         </span>
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="pb-4">
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        width={400}
-                        height={225}
-                        className="rounded-lg object-cover w-full aspect-[4/3] mb-4 group-hover:shadow-md group-hover:shadow-purple-500/10 transition-all duration-300"
-                        priority={index < 3}
-                        loading={index < 3 ? undefined : "lazy"}
-                        sizes="(min-width: 1280px) 400px, (min-width: 768px) 50vw, 100vw"
-                      />
-                      <div className="flex flex-wrap gap-2 mb-4">
+                    <CardContent className="pb-4 flex-1 flex flex-col">
+                      <div className="flex flex-wrap gap-2 mt-auto">
                         {project.tags.map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
@@ -509,13 +501,13 @@ export default function PortfolioPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="flex flex-col sm:flex-row justify-between gap-3">
-                      {project.inDevelopment ? (
+                      {project.inDevelopment || project.isPortfolio ? (
                         <Button
                           variant="outline"
                           className="border-purple-400/20 bg-purple-400/5 text-gray-400 cursor-not-allowed flex-1 sm:flex-none bg-transparent opacity-70"
                           disabled
                         >
-                          <Github className="w-4 h-4 mr-2" /> Private
+                          <Github className="w-4 h-4 mr-2" /> {project.inDevelopment ? "Private" : "Coming Soon"}
                         </Button>
                       ) : (
                         <Button
@@ -529,12 +521,21 @@ export default function PortfolioPage() {
                         </Button>
                       )}
 
-                      {project.inDevelopment || project.title === "Carbon Emissions Calculator" ? (
+                      {project.inDevelopment ||
+                      project.title === "Carbon Emissions Calculator" ||
+                      project.comingSoon ? (
                         <Button
                           className="bg-purple-500/30 text-gray-400 cursor-not-allowed flex-1 sm:flex-none opacity-70"
                           disabled
                         >
                           Coming Soon <ArrowUpRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      ) : project.isPortfolio ? (
+                        <Button
+                          className="bg-purple-500/70 hover:bg-purple-500/80 text-white hover:scale-102 transition-all duration-300 flex-1 sm:flex-none cursor-default"
+                          disabled
+                        >
+                          You're here! <ArrowUpRight className="w-4 h-4 ml-2" />
                         </Button>
                       ) : (
                         <Button
@@ -605,9 +606,9 @@ export default function PortfolioPage() {
                   ].map((skill, index) => (
                     <Card
                       key={index}
-                      className="bg-card/40 backdrop-blur-sm border-purple-400/20 hover:border-purple-400/40 transition-[transform,border-color,box-shadow] duration-180 ease-[cubic-bezier(0.4,0,0.2,1)] transform hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 group p-4 aspect-square flex flex-col items-center justify-center text-center will-change-transform"
+                      className="bg-card/40 backdrop-blur-sm border-purple-400/20 hover:border-purple-400/50 transition-[transform,border-color,box-shadow] duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] transform hover:-translate-y-3 hover:scale-110 hover:shadow-xl hover:shadow-purple-500/30 hover:bg-card/60 group p-4 aspect-square flex flex-col items-center justify-center text-center will-change-transform"
                     >
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 mb-1 relative overflow-hidden rounded-lg group-hover:scale-110 transition-transform duration-120 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 mb-1 relative overflow-hidden rounded-lg group-hover:scale-115 transition-transform duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform">
                         <Image
                           src={skill.image || "/placeholder.svg"}
                           alt={skill.name}
@@ -618,7 +619,7 @@ export default function PortfolioPage() {
                           sizes="(min-width: 640px) 64px, 48px"
                         />
                       </div>
-                      <span className="text-xs sm:text-sm font-medium text-purple-100 group-hover:text-white transition-colors duration-120 ease-[cubic-bezier(0.4,0,0.2,1)]">
+                      <span className="text-xs sm:text-sm font-medium text-purple-100 group-hover:text-white group-hover:font-semibold transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)]">
                         {skill.name}
                       </span>
                     </Card>
@@ -668,9 +669,9 @@ export default function PortfolioPage() {
                   ].map((skill, index) => (
                     <Card
                       key={index}
-                      className="bg-card/40 backdrop-blur-sm border-purple-400/20 hover:border-purple-400/40 transition-[transform,border-color,box-shadow] duration-180 ease-[cubic-bezier(0.4,0,0.2,1)] transform hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 group p-4 aspect-square flex flex-col items-center justify-center text-center will-change-transform"
+                      className="bg-card/40 backdrop-blur-sm border-purple-400/20 hover:border-purple-400/50 transition-[transform,border-color,box-shadow] duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] transform hover:-translate-y-3 hover:scale-110 hover:shadow-xl hover:shadow-purple-500/30 hover:bg-card/60 group p-4 aspect-square flex flex-col items-center justify-center text-center will-change-transform"
                     >
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 mb-1 relative overflow-hidden rounded-lg group-hover:scale-110 transition-transform duration-120 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 mb-1 relative overflow-hidden rounded-lg group-hover:scale-115 transition-transform duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform">
                         <Image
                           src={skill.image || "/placeholder.svg"}
                           alt={skill.name}
@@ -680,7 +681,7 @@ export default function PortfolioPage() {
                           sizes="(min-width: 640px) 64px, 48px"
                         />
                       </div>
-                      <span className="text-xs sm:text-sm font-medium text-purple-100 group-hover:text-white transition-colors duration-120 ease-[cubic-bezier(0.4,0,0.2,1)]">
+                      <span className="text-xs sm:text-sm font-medium text-purple-100 group-hover:text-white group-hover:font-semibold transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)]">
                         {skill.name}
                       </span>
                     </Card>
@@ -730,9 +731,9 @@ export default function PortfolioPage() {
                   ].map((skill, index) => (
                     <Card
                       key={index}
-                      className="bg-card/40 backdrop-blur-sm border-purple-400/20 hover:border-purple-400/40 transition-[transform,border-color,box-shadow] duration-180 ease-[cubic-bezier(0.4,0,0.2,1)] transform hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 group p-4 aspect-square flex flex-col items-center justify-center text-center will-change-transform"
+                      className="bg-card/40 backdrop-blur-sm border-purple-400/20 hover:border-purple-400/50 transition-[transform,border-color,box-shadow] duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] transform hover:-translate-y-3 hover:scale-110 hover:shadow-xl hover:shadow-purple-500/30 hover:bg-card/60 group p-4 aspect-square flex flex-col items-center justify-center text-center will-change-transform"
                     >
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 mb-1 relative overflow-hidden rounded-lg group-hover:scale-110 transition-transform duration-120 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 mb-1 relative overflow-hidden rounded-lg group-hover:scale-115 transition-transform duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform">
                         <Image
                           src={skill.image || "/placeholder.svg"}
                           alt={skill.name}
@@ -742,7 +743,7 @@ export default function PortfolioPage() {
                           sizes="(min-width: 640px) 64px, 48px"
                         />
                       </div>
-                      <span className="text-xs sm:text-sm font-medium text-purple-100 group-hover:text-white transition-colors duration-120 ease-[cubic-bezier(0.4,0,0.2,1)]">
+                      <span className="text-xs sm:text-sm font-medium text-purple-100 group-hover:text-white group-hover:font-semibold transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)]">
                         {skill.name}
                       </span>
                     </Card>
@@ -760,12 +761,12 @@ export default function PortfolioPage() {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                    Hello! I’m Daniel Y. Elbaz, a versatile developer with experience in a variety of languages,
-                    frameworks, and product types. I’ve built multiple SaaS websites in React and TypeScript, but I’ve
+                    Hello! I'm Daniel Y. Elbaz, a versatile developer with experience in a variety of languages,
+                    frameworks, and product types. I've built multiple SaaS websites in React and TypeScript, but I've
                     also developed entire games in Java.
                   </p>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                    I’m especially passionate about building products that leverage complex and cutting-edge technology
+                    I'm especially passionate about building products that leverage complex and cutting-edge technology
                     to solve modern problems and craft interactive applications as my extensive portfolio highlights.
                   </p>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
@@ -780,14 +781,13 @@ export default function PortfolioPage() {
                 style={{ animationDelay: "0.2s" }}
               >
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/175679070.jpg-gg5LRqBoedPcaLkQN3AndPwjHarbO1.jpeg"
                   alt="About me"
                   fill
                   sizes="(min-width: 1024px) 800px, 100vw"
-                  className="object-cover hover:scale-102 transition-transform duration-500"
+                  className="object-cover scale-x-[-1]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent rounded-lg pointer-events-none"></div>
               </div>
             </div>
           </section>
