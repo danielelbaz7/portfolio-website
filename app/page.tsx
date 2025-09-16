@@ -124,6 +124,7 @@ export default function PortfolioPage() {
       liveUrl: "#",
       githubUrl: "https://github.com/danielelbaz7/minesweeper-cpp",
       comingSoon: true,
+      privateRepo: true,
     },
     {
       title: "Personal Portfolio Website",
@@ -403,13 +404,15 @@ export default function PortfolioPage() {
               </div>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-snug mt-8 mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent max-w-6xl px-6">
-              Architecting Digital Experiences
+              Architecting Innovative Solutions
             </h1>
             <p
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-4xl animate-fadeIn px-6"
               style={{ animationDelay: "0.3s" }}
             >
-              I'm Daniel Y. Elbaz, a developer building modern, useful, and cutting-edge software. Currently, I'm particularly passionate about artificial intelligence and am currently building multiple AI-powered applications.
+              I'm Daniel Y. Elbaz, a developer building modern, useful, and cutting-edge software. Currently, I'm
+              particularly passionate about artificial intelligence and am currently building multiple AI-powered
+              applications.
             </p>
             <div
               className="flex flex-col sm:flex-row justify-center gap-4 animate-fadeIn"
@@ -493,7 +496,7 @@ export default function PortfolioPage() {
                         {project.tags.map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
-                            className="text-xs bg-purple-400/10 text-purple-300 px-2 py-1 rounded-full border border-purple-400/20 hover:bg-purple-400/15 hover:scale-105 transition-all duration-200 cursor-default"
+                            className="text-xs bg-purple-400/20 text-purple-100 px-2 py-1 rounded-full border border-purple-400/30 hover:bg-purple-400/25 hover:scale-105 transition-all duration-200 cursor-default"
                           >
                             {tag}
                           </span>
@@ -501,7 +504,15 @@ export default function PortfolioPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="flex flex-col sm:flex-row justify-between gap-3">
-                      {project.inDevelopment ? (
+                      {project.privateRepo ? (
+                        <Button
+                          variant="outline"
+                          className="border-purple-400/20 bg-purple-400/5 text-gray-400 cursor-not-allowed flex-1 sm:flex-none bg-transparent opacity-70"
+                          disabled
+                        >
+                          <Github className="w-4 h-4 mr-2" /> Private
+                        </Button>
+                      ) : project.inDevelopment ? (
                         <Button
                           variant="outline"
                           className="border-purple-400/20 bg-purple-400/5 text-gray-400 cursor-not-allowed flex-1 sm:flex-none bg-transparent opacity-70"
@@ -705,6 +716,10 @@ export default function PortfolioPage() {
                       image: "/icons/intellij.webp",
                     },
                     {
+                      name: "PyCharm",
+                      image: "/icons/pycharm.webp",
+                    },
+                    {
                       name: "Blender",
                       image: "/icons/blender.webp",
                     },
@@ -719,10 +734,6 @@ export default function PortfolioPage() {
                     {
                       name: "GitHub",
                       image: "/icons/github.webp",
-                    },
-                    {
-                      name: "PyCharm",
-                      image: "/icons/pycharm.webp",
                     },
                     {
                       name: "Git",
