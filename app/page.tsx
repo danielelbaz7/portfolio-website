@@ -290,7 +290,7 @@ export default function PortfolioPage() {
           </Link>
           <nav className="flex items-center gap-4">
             <Link href="https://github.com/danielelbaz7" target="_blank" rel="noopener noreferrer" className="group">
-              <Github className="w-6 h-6 hover:text-purple-400 transition-all duration-300 group-hover:scale-105" />
+              <Github className="w-6 h-6 hover:text-purple-400 transition-all duration-300 group-hover:scale-105 invert" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/danielelbaz7/"
@@ -510,7 +510,7 @@ export default function PortfolioPage() {
                           className="border-purple-400/20 bg-purple-400/5 text-gray-400 cursor-not-allowed flex-1 sm:flex-none bg-transparent opacity-70"
                           disabled
                         >
-                          <Github className="w-4 h-4 mr-2" /> Private
+                          <Github className="w-4 h-4 mr-2 invert" /> Private
                         </Button>
                       ) : project.inDevelopment ? (
                         <Button
@@ -518,7 +518,7 @@ export default function PortfolioPage() {
                           className="border-purple-400/20 bg-purple-400/5 text-gray-400 cursor-not-allowed flex-1 sm:flex-none bg-transparent opacity-70"
                           disabled
                         >
-                          <Github className="w-4 h-4 mr-2" /> Private
+                          <Github className="w-4 h-4 mr-2 invert" /> Private
                         </Button>
                       ) : (
                         <Button
@@ -527,7 +527,7 @@ export default function PortfolioPage() {
                           className="border-purple-400/20 hover:bg-purple-400/5 text-white hover:scale-102 transition-all duration-300 flex-1 sm:flex-none bg-transparent"
                         >
                           <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4 mr-2" /> GitHub
+                            <Github className="w-4 h-4 mr-2 invert" /> GitHub
                           </Link>
                         </Button>
                       )}
@@ -643,10 +643,14 @@ export default function PortfolioPage() {
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-8 text-purple-200">
                   Frameworks & Libraries
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 lg:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-4 lg:gap-6">
                   {[
                     {
                       name: "React",
+                      image: "/icons/react.webp",
+                    },
+                    {
+                      name: "React Native",
                       image: "/icons/react.webp",
                     },
                     {
@@ -749,7 +753,7 @@ export default function PortfolioPage() {
                           src={skill.image || "/placeholder.svg"}
                           alt={skill.name}
                           fill
-                          className="object-contain"
+                          className={`object-contain ${skill.name === "GitHub" ? "invert" : ""}`}
                           loading="lazy"
                           sizes="(min-width: 640px) 64px, 48px"
                         />
@@ -792,7 +796,7 @@ export default function PortfolioPage() {
                 style={{ animationDelay: "0.2s" }}
               >
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/175679070.jpg-gg5LRqBoedPcaLkQN3AndPwjHarbO1.jpeg"
+                  src="/images/design-mode/175679070.jpg.jpeg"
                   alt="About me"
                   fill
                   sizes="(min-width: 1024px) 800px, 100vw"
