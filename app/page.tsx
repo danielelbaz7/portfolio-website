@@ -6,6 +6,7 @@ import { Github, Linkedin, ArrowUpRight, Code } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import dynamic from "next/dynamic"
+import { Analytics } from "@vercel/analytics/next"
 
 const TerminalEffect = dynamic(() => import("@/components/ui/terminal-effect").then((m) => m.TerminalEffect), {
   ssr: false,
@@ -290,7 +291,7 @@ export default function PortfolioPage() {
           </Link>
           <nav className="flex items-center gap-4">
             <Link href="https://github.com/danielelbaz7" target="_blank" rel="noopener noreferrer" className="group">
-              <Github className="w-6 h-6 hover:text-purple-400 transition-all duration-300 group-hover:scale-105 invert" />
+              <Github className="w-6 h-6 hover:text-purple-400 transition-all duration-300 group-hover:scale-105" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/danielelbaz7/"
@@ -510,7 +511,7 @@ export default function PortfolioPage() {
                           className="border-purple-400/20 bg-purple-400/5 text-gray-400 cursor-not-allowed flex-1 sm:flex-none bg-transparent opacity-70"
                           disabled
                         >
-                          <Github className="w-4 h-4 mr-2 invert" /> Private
+                          <Github className="w-4 h-4 mr-2" /> Private
                         </Button>
                       ) : project.inDevelopment ? (
                         <Button
@@ -518,7 +519,7 @@ export default function PortfolioPage() {
                           className="border-purple-400/20 bg-purple-400/5 text-gray-400 cursor-not-allowed flex-1 sm:flex-none bg-transparent opacity-70"
                           disabled
                         >
-                          <Github className="w-4 h-4 mr-2 invert" /> Private
+                          <Github className="w-4 h-4 mr-2" /> Private
                         </Button>
                       ) : (
                         <Button
@@ -527,7 +528,7 @@ export default function PortfolioPage() {
                           className="border-purple-400/20 hover:bg-purple-400/5 text-white hover:scale-102 transition-all duration-300 flex-1 sm:flex-none bg-transparent"
                         >
                           <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4 mr-2 invert" /> GitHub
+                            <Github className="w-4 h-4 mr-2" /> GitHub
                           </Link>
                         </Button>
                       )}
