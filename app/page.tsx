@@ -93,7 +93,7 @@ export default function PortfolioPage() {
       comingSoon: true,
     },
     {
-      title: "Stock Trading Algorithm Visualizer",
+      title: "Quantitative Trading Visualizer",
       description:
         "A site that allows users to select any security or cryptocurrency and perform two trading strategies between two dates they select to view historical success rates of each algorithm on their selected security.",
       expandedDescription:
