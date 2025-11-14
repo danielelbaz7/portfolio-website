@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Github, Linkedin, ArrowUpRight, Code } from "lucide-react"
+import { Github, Linkedin, ArrowUpRight, Code } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 import dynamic from "next/dynamic"
@@ -62,7 +62,7 @@ export default function PortfolioPage() {
         "A SaaS application for students in advanced placement high school classes. The program allows students to create custom high-quality practice questions with AI, all based on course curriculum.",
       expandedDescription:
         "The website offers free pre-generated practice questions and users have the option to pay for credits that they can use to generate questions for a variety of AP courses based on whatever topics they choose. The tool uses RAG to obtain the relevant information for the topic and generates unique questions every time, beating standard LLMs with its access to a much wider range of in-depth information. Questions can also be sorted by textbook chapter and course unit which provides versatility for customers and makes sure they can learn whatever material they need to.",
-      tags: ["TypeScript", "React", "Python", "Flask", "Tailwind CSS", "Supabase"],
+      tags: ["TypeScript", "React", "Python", "Flask", "TailwindCSS", "Supabase"],
       image: "/placeholder.svg?height=225&width=400",
       liveUrl: "#",
       githubUrl: "#",
@@ -74,7 +74,7 @@ export default function PortfolioPage() {
         "A suite of video editing tools packed as a SaaS for content creators looking to craft original videos or upgrade the quality of pre-existing content. Provides 6+ tools for creating and improving videos to ensure viral content.",
       expandedDescription:
         "The website offers tools like auto-subtitles, a clip finding tool, AI voiceover, and more, ensuring creators have the tools to build any kind of video they would like. The frontend integrates authentication and displays credit amounts to each user. It also implements drag-and-drop and video prompting depending on the tool. This information is then sent to the Flask backend where the content is run through a pipeline of different tools. Some tools utilize one API while others utilize multiple, and the backend is in charge of directing tools to each other and connecting everything to create complete products. The backend also calculates cost and ensures that users have enough credits to perform each operation.",
-      tags: ["TypeScript", "React", "Python", "Flask", "Tailwind CSS", "Supabase"],
+      tags: ["TypeScript", "React", "Python", "Flask", "TailwindCSS", "Supabase"],
       image: "/placeholder.svg?height=225&width=400",
       liveUrl: "#",
       githubUrl: "#",
@@ -133,7 +133,7 @@ export default function PortfolioPage() {
         "A portfolio website that highlights my projects, technical skills, and additional details about me as a developer. Offers a terminal interface that allows users to navigate the site or view details about me.",
       expandedDescription:
         "The website offers all important information about me, Daniel Y. Elbaz, and my knowledge as a developer. It outlines all of my major programming projects, those in development, and the tech stacks used for each one. It also details all of the technical skills I have experience with. Finally, it provides an about me section and my email address as well as my socials. The website features a variety of animations and methods of interactivity like automatic scrolling when pressing on certain buttons. The site also implements a terminal interface made to emulate the MacOS terminal, and this terminal offers commands that allow users to view details about me or navigate the website. The website features lazy-loading to improve performance, and the website utilizes TypeScript and React for the frontend and Next.js in the backend to optimize website usability.",
-      tags: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+      tags: ["TypeScript", "React", "Next.js", "TailwindCSS"],
       image: "/placeholder.svg?height=225&width=400",
       liveUrl: "#",
       githubUrl: "https://github.com/danielelbaz7/portfolio-website",
@@ -710,23 +710,23 @@ export default function PortfolioPage() {
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-8 text-purple-200">
                   Developer Tools
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 lg:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-10 gap-4 lg:gap-6">
                   {[
                     {
-                      name: "CLion",
-                      image: "/icons/clion.webp",
+                      name: "AWS",
+                      image: "/icons/aws-logo.png",
                     },
                     {
-                      name: "IntelliJ",
-                      image: "/icons/intellij.webp",
+                      name: "GCP",
+                      image: "/icons/gcp-logo.png",
                     },
                     {
-                      name: "PyCharm",
-                      image: "/icons/pycharm.webp",
+                      name: "Git",
+                      image: "/icons/git.webp",
                     },
                     {
-                      name: "Blender",
-                      image: "/icons/blender.webp",
+                      name: "GitHub",
+                      image: "/icons/github.webp",
                     },
                     {
                       name: "Linux",
@@ -737,12 +737,20 @@ export default function PortfolioPage() {
                       image: "/icons/vscode.webp",
                     },
                     {
-                      name: "GitHub",
-                      image: "/icons/github.webp",
+                      name: "PyCharm",
+                      image: "/icons/pycharm.webp",
                     },
                     {
-                      name: "Git",
-                      image: "/icons/git.webp",
+                      name: "CLion",
+                      image: "/icons/clion.webp",
+                    },
+                    {
+                      name: "IntelliJ",
+                      image: "/icons/intellij.webp",
+                    },
+                    {
+                      name: "Blender",
+                      image: "/icons/blender.webp",
                     },
                   ].map((skill, index) => (
                     <Card
@@ -782,8 +790,7 @@ export default function PortfolioPage() {
                     also developed entire games in Java.
                   </p>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                    I'm especially passionate about building products that leverage complex and cutting-edge technology
-                    to solve modern problems and craft interactive applications as my extensive portfolio highlights.
+                    I'm especially passionate about building products and interactive applications that leverage complex and cutting-edge technology to solve modern problems.
                   </p>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                     My expertise lies in desktop applications, math-heavy programming, and backend development, but I am
