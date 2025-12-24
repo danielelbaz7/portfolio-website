@@ -2,11 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Github, Linkedin, ArrowUpRight, Code } from 'lucide-react'
+import { Github, Linkedin, ArrowUpRight, Code } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import dynamic from "next/dynamic"
-import { Analytics } from "@vercel/analytics/next"
 
 const TerminalEffect = dynamic(() => import("@/components/ui/terminal-effect").then((m) => m.TerminalEffect), {
   ssr: false,
@@ -69,16 +68,16 @@ export default function PortfolioPage() {
       inDevelopment: true,
     },
     {
-      title: "AI Video Studio",
+      title: "Chip-8 Emulator",
       description:
-        "A suite of video editing tools packed as a SaaS for content creators looking to craft original videos or upgrade the quality of pre-existing content. Provides 6+ tools for creating and improving videos to ensure viral content.",
+        "A fully functional emulator for the Chip-8 virtual machine, a simple 8-bit interpreter originally designed to run games from the 1970s-80s. Supports all 35 opcodes with accurate cycle-by-cycle execution and graphical display.",
       expandedDescription:
-        "The website offers tools like auto-subtitles, a clip finding tool, AI voiceover, and more, ensuring creators have the tools to build any kind of video they would like. The frontend integrates authentication and displays credit amounts to each user. It also implements drag-and-drop and video prompting depending on the tool. This information is then sent to the Flask backend where the content is run through a pipeline of different tools. Some tools utilize one API while others utilize multiple, and the backend is in charge of directing tools to each other and connecting everything to create complete products. The backend also calculates cost and ensures that users have enough credits to perform each operation.",
-      tags: ["TypeScript", "React", "Python", "Flask", "TailwindCSS", "Supabase"],
+        "This Chip-8 emulator faithfully recreates the original 8-bit virtual machine architecture, featuring a 64x32 pixel display, 16 8-bit registers, 4KB of memory, and a stack for subroutine calls. The emulator implements all 35 Chip-8 opcodes with precise timing and cycle-accurate execution. It uses a fetch-decode-execute cycle to interpret bytecode instructions and handles timer decrements for sound and delay operations. Built with C++ and SDL for high-performance graphics rendering, the emulator supports loading and playing original Chip-8 ROM files and includes adjustable execution speed. The project demonstrates deep understanding of low-level architecture, instruction sets, and how virtual machines work.",
+      tags: ["C++", "SDL"],
       image: "/placeholder.svg?height=225&width=400",
       liveUrl: "#",
       githubUrl: "#",
-      inDevelopment: true,
+      comingSoon: true,
     },
     {
       title: "Chess Engine",
@@ -790,7 +789,8 @@ export default function PortfolioPage() {
                     also developed entire games in Java.
                   </p>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                    I'm especially passionate about building products and interactive applications that leverage complex and cutting-edge technology to solve modern problems.
+                    I'm especially passionate about building products and interactive applications that leverage complex
+                    and cutting-edge technology to solve modern problems.
                   </p>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                     My expertise lies in desktop applications, math-heavy programming, and backend development, but I am
