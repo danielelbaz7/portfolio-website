@@ -76,7 +76,7 @@ export default function PortfolioPage() {
       tags: ["C++", "SDL"],
       image: "/placeholder.svg?height=225&width=400",
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/danielelbaz7/Chip_8",
       comingSoon: true,
     },
     {
