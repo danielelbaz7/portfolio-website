@@ -63,9 +63,9 @@ export default function PortfolioPage() {
         "The website offers free pre-generated practice questions and users have the option to pay for credits that they can use to generate questions for a variety of AP courses based on whatever topics they choose. The tool uses RAG to obtain the relevant information for the topic and generates unique questions every time, beating standard LLMs with its access to a much wider range of in-depth information. Questions can also be sorted by textbook chapter and course unit which provides versatility for customers and makes sure they can learn whatever material they need to.",
       tags: ["TypeScript", "React", "Python", "Flask", "TailwindCSS", "Supabase"],
       image: "/placeholder.svg?height=225&width=400",
-      liveUrl: "#",
+      liveUrl: "https://www.studyap.ai/",
       githubUrl: "#",
-      inDevelopment: true,
+      inDevelopment: false,
     },
     {
       title: "Chip-8 Emulator",
