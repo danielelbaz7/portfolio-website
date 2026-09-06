@@ -68,7 +68,19 @@ export default function PortfolioPage() {
       privateRepo: true,
     },
     {
-    title: "Game Boy Emulator",
+      title: "Redis Clone",
+      description:
+        "A Redis-compatible in-memory data store built in C++ with RESP parsing, TTL expiration, persistence, replication, and concurrent client handling.",
+      expandedDescription:
+        "This systems-focused Redis clone implements the Redis Serialization Protocol (RESP), key expiration with TTL support, append-only-file persistence, crash recovery, and asynchronous primary-replica replication over TCP. Its sharded concurrent engine sustains 100K+ operations per second at under 5ms p99 latency with 256 concurrent clients.",
+      tags: ["C++", "Linux", "TCP/IP", "Concurrency", "Distributed Systems"],
+      image: "/placeholder.svg?height=225&width=400",
+      liveUrl: "#",
+      githubUrl: "https://github.com/danielelbaz7/redisclone",
+      comingSoon: true,
+    },
+    {
+      title: "Game Boy Emulator",
     description:
       "A cycle-accurate Game Boy emulator with hardware-faithful CPU, PPU, and memory model. Implements the LR35902 instruction set with 500 opcodes, accurate scanline-based graphics rendering, the original memory map, and a GUI for ease-of-use.",
     expandedDescription:
@@ -422,9 +434,9 @@ export default function PortfolioPage() {
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-4xl animate-fadeIn px-6"
               style={{ animationDelay: "0.3s" }}
             >
-              I'm Daniel Y. Elbaz, a developer building modern, useful, and cutting-edge software. Currently, I'm
-              particularly passionate about artificial intelligence and am currently building multiple AI-powered
-              applications.
+              I'm Daniel Y. Elbaz, a developer targeting systems software engineering and backend infrastructure
+              roles. I build reliable, high-performance software across distributed systems, developer tooling, and
+              AI-powered applications.
             </p>
             <div
               className="flex flex-col sm:flex-row justify-center gap-4 animate-fadeIn"
@@ -574,6 +586,34 @@ export default function PortfolioPage() {
                   </Card>
                 )
               })}
+            </div>
+          </section>
+
+          <section id="experience" className="py-24 md:py-32">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 animate-fadeIn">
+                Experience
+              </h2>
+              <Card className="animate-fadeIn bg-card/50 backdrop-blur-sm border-purple-400/15 hover:border-purple-400/30 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div>
+                      <CardTitle className="text-xl sm:text-2xl text-purple-100">Software Engineer Intern</CardTitle>
+                      <CardDescription className="text-base sm:text-lg text-purple-300">IBM · DS8000 Storage Platform</CardDescription>
+                    </div>
+                    <span className="text-sm text-muted-foreground whitespace-nowrap">May 2026 – August 2026</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-muted-foreground text-base sm:text-lg leading-relaxed list-disc pl-5">
+                    <li>Sped up analysis of 353K+ vulnerabilities by 450% with a Python/FastAPI and TypeScript/React platform used by 8+ developers concurrently.</li>
+                    <li>Built and deployed a multi-step LLM security analysis pipeline with Ollama, Gemma, Docker, NIST, and Red Hat API data, reducing hallucinations by 60%.</li>
+                    <li>Created modular Python/Linux dependency scanners for C++, Python, and Java across 6+ GitHub repositories with 99% exposure-detection accuracy.</li>
+                    <li>Overhauled C++ key-server communication on the DS8000 storage platform, resolving a buffer overflow defect that caused data corruption and system failures.</li>
+                    <li>Repaired an FPGA-burned debugging terminal in C, enabling live hardware inspection and real-time control.</li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
           </section>
 
@@ -801,8 +841,8 @@ export default function PortfolioPage() {
                     also developed entire games in Java.
                   </p>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                    I'm especially passionate about building products and interactive applications that leverage complex
-                    and cutting-edge technology to solve modern problems.
+                    I'm targeting systems software engineering and backend infrastructure roles, with a focus on
+                    performance, reliability, concurrency, and the low-level systems that make modern software work.
                   </p>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                     My expertise lies in desktop applications, math-heavy programming, and backend development, but I am
